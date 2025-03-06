@@ -23,9 +23,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',  # Important!
-    'django.contrib.auth.middleware.AuthenticationMiddleware',  # Important!
-    'django.contrib.messages.middleware.MessageMiddleware',  # Important!
+    'django.contrib.sessions.middleware.SessionMiddleware',  
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  
+    'django.contrib.messages.middleware.MessageMiddleware',  
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -44,6 +44,8 @@ TEMPLATES = [
         },
     },
 ]
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 DATABASES = {
     "default": {
