@@ -9,7 +9,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "default_secret_key")
 DEBUG = False
 
 # ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
-ALLOWED_HOSTS = ['recipe_scraper.onrender.com']
+ALLOWED_HOSTS = ['recipe-scraper-z8ms.onrender.com']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
