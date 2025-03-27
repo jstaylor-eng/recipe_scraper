@@ -1,7 +1,10 @@
 Migrations specified in docker build not working automatically, use below once built and up:
 sudo docker compose exec web python manage.py makemigrations recipes
 sudo docker compose exec web python manage.py migrate
-
+2024-03-27 - now working from compose/build.
 
 Currently not working with some websites:
 https://sallysbakingaddiction.com/best-banana-bread-recipe/ - scrape blocked by Cloudflare
+
+full address contains /api and /fetch_recipe, example:
+http://localhost:8000/api/fetch_recipe/?url=https://www.bbc.co.uk/food/recipes/fluffyamericanpancak_74828

@@ -7,7 +7,14 @@ def fetch_recipe(request):
     if not url:
         return JsonResponse({"error": "No URL provided"}, status=400)
 
-    data = scrape_recipe(url)
+    try:
+        data = scrape_recipe(url)
+    except Exception as e:
+        return JsonResponse({"error": f"Failed to scrape recipe: {str(e)}"}, status=500)
+
+    if not data.get("title") or not data.get("ingredients") or not data.get("steps"):
+        return JsonResponse({"error": "Incomplete recipe data"}, status=400)
+
 
     recipe, created = Recipe.objects.get_or_create(title=data["title"], url=url)
     if created:
